@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Heading, HeadingProps } from '@ignite-ui/react'
+import { Heading, HeadingProps } from '@davi-ignite-ui/react'
 
 // Tudo que for colocado como configuração global dentro desse bloco será herdado por todas as variações do componente
 export default {
