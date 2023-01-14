@@ -7,7 +7,7 @@ export default {
   component: Avatar,
   args: {
     src: 'https://github.com/davilucena222.png',
-    alt: 'Davi Luiz'
+    alt: 'Davi Luiz',
   },
 } as Meta<AvatarProps>
 
@@ -16,5 +16,12 @@ export const Primary: StoryObj<AvatarProps> = {}
 export const WithFallback: StoryObj<AvatarProps> = {
   args: {
     src: undefined,
+  },
+  argTypes: {
+    src: {
+      control: {
+        type: 'text',
+      },
+    },
   },
 }
