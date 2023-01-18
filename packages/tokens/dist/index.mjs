@@ -50,7 +50,8 @@ var radii = {
 // src/fonts.ts
 var fonts = {
   default: "Roboto, sans-serif",
-  code: "monospace"
+  code: "monospace",
+  tooltipFont: "Inter, sans-serif"
 };
 
 // src/font-sizes.ts

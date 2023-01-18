@@ -9,4 +9,14 @@ export default {
   argTypes: {},
 } as Meta<TooltipProps>
 
-export const Primary: StoryObj<TooltipProps> = {}
+export const Primary: StoryObj<TooltipProps> = {
+  args: {
+    content: '21 de Outubro - Indisponível',
+  },
+}
+
+export const Secondary: StoryObj<TooltipProps> = {
+  args: {
+    content: '26 de Outubro - Disponível',
+  },
+}

@@ -63,7 +63,9 @@ __export(src_exports, {
   MultiStep: () => MultiStep,
   Text: () => Text,
   TextArea: () => TextArea,
-  TextInput: () => TextInput
+  TextInput: () => TextInput,
+  Toast: () => Toast,
+  Tooltip: () => Tooltip
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -113,7 +115,8 @@ var radii = {
 };
 var fonts = {
   default: "Roboto, sans-serif",
-  code: "monospace"
+  code: "monospace",
+  tooltipFont: "Inter, sans-serif"
 };
 var fontSizes = {
   xxs: "0.625rem",
@@ -530,6 +533,97 @@ function MultiStep({ size, currentStep = 1 }) {
   ] });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/Tooltip/styles.ts
+var TooltipContainer = styled("div", {
+  diplay: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column",
+  padding: "$3 $4",
+  width: "13.68rem",
+  background: "$gray900",
+  borderRadius: "$sm",
+  textAlign: "center"
+});
+var TooltipText = styled("p", {
+  margin: "0 auto",
+  fontFamily: "$tooltipFont",
+  fontWeight: "$medium",
+  lineHeight: "$short",
+  color: "$gray100"
+});
+var ArrowContainer = styled("div", {
+  marginTop: "-0.5rem",
+  marginLeft: "7rem",
+  svg: {
+    color: "$gray900"
+  }
+});
+
+// src/components/Tooltip/index.tsx
+var import_vsc = require("react-icons/vsc");
+var import_jsx_runtime5 = require("react/jsx-runtime");
+function Tooltip(_a) {
+  var _b = _a, { content } = _b, rest = __objRest(_b, ["content"]);
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipContainer, __spreadProps(__spreadValues({}, rest), { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipText, { children: content }) })),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(ArrowContainer, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_vsc.VscTriangleDown, { size: "1.5rem" }) })
+  ] });
+}
+
+// src/components/Toast/index.tsx
+var import_phosphor_react3 = require("phosphor-react");
+
+// src/components/Toast/styles.ts
+var ToastContainer = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+  padding: "$3 $4",
+  gap: "$1",
+  width: "360px",
+  background: "$gray800",
+  border: "1px solid $gray600",
+  borderRadius: "$sm"
+});
+var Header = styled("header", {
+  width: "100%",
+  height: "$8",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  svg: {
+    width: "$xl",
+    color: "$gray200"
+  }
+});
+var TextToast = styled("p", {
+  fontFamily: "$default",
+  fontWeight: "$bold",
+  fontSize: "$xl",
+  lineHeight: "$base",
+  color: "$white"
+});
+var Date = styled("span", {
+  fontFamily: "$default",
+  fontWeight: "$regular",
+  fontSize: "$sm",
+  lineHeight: "$base",
+  color: "$gray200"
+});
+
+// src/components/Toast/index.tsx
+var import_jsx_runtime6 = require("react/jsx-runtime");
+function Toast({ title, dateToast }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(ToastContainer, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(Header, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(TextToast, { children: title }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_phosphor_react3.X, {})
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Date, { children: dateToast })
+  ] });
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -540,5 +634,7 @@ MultiStep.displayName = "MultiStep";
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  Toast,
+  Tooltip
 });

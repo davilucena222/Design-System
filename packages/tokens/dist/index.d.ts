@@ -47,6 +47,7 @@ declare const radii: {
 declare const fonts: {
     default: string;
     code: string;
+    tooltipFont: string;
 };
 
 declare const fontSizes: {
