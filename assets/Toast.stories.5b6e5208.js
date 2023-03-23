@@ -1,0 +1,2 @@
+import{d as t}from"./index.d12ff69f.js";import"./index.ce8f91aa.js";import"./iframe.b41f0654.js";import"./index.f2cf1abe.js";import"./jsx-runtime.8ff602a8.js";const i={title:"Element Animation/Toast",component:t,args:{},argTypes:{}},m={args:{title:"Agendamento realizado",dateToast:"Quarta-feira, 23 de Outubro \xE0s 16h"}},n=["Primary"];export{m as Primary,n as __namedExportsOrder,i as default};
+//# sourceMappingURL=Toast.stories.5b6e5208.js.map
